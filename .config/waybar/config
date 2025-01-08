@@ -64,11 +64,11 @@
     },
     "cpu": {
         "format": "🖳{usage}%",
-        "on-click": "alacritty -e btop"
+        "on-click": "kitty -e btop"
     },
     "memory": {
         "format": "🖴 {: >3}%",
-        "on-click": "alacritty -e btop"
+        "on-click": "kitty -e btop"
     },
     "backlight": {
         // "device": "acpi_video1",
