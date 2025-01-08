@@ -70,7 +70,7 @@ window#waybar {
     border-color: #81a1c1;
 }
 
-#clock, #battery, #cpu, #memory,#idle_inhibitor, #temperature,#custom-keyboard-layout, #backlight, #network, #pulseaudio, #tray, #window,#custom-launcher,#custom-power,#custom-updates ,#custom-network_traffic,#custom-weather{
+#clock, #battery, #cpu, #memory,#idle_inhibitor, #backlight, #network, #pulseaudio, #tray, #window,#custom-power,#custom-weather{
     padding: 0 3px;
     border-bottom: 2px;
     border-style: solid;
@@ -159,7 +159,7 @@ window#waybar {
 
 #custom-launcher{
         font-size: 20px;
-        background-image: url('/home/otis/.config/waybar/launcher.png');
+        background-image: url('/home/phil/.config/waybar/launcher.png');
         background-position: center;
         background-repeat: no-repeat;
         background-size: contain;
