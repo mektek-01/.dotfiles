@@ -1,146 +1,139 @@
-## FIRST LINE/ROW: Info & Status
-# First param ─┌
-[username]
-format = " [╭─$user]($style)@"
-show_always = true
-style_root = "bold red"
-style_user = "bold red"
+format = """
+[](#818181)\
+[ ](fg:#000000 bg:#818181)\
+[\uE0BA](fg:#6f282e bg:#818181)\
+$directory\
+[\uE0BA](fg:#3a454e bg:#6f282e)\
+$git_branch\
+[](fg:#3a454e bg:#86BBD8)\
+$c\
+$elixir\
+$elm\
+$golang\
+$haskell\
+$java\
+$julia\
+$nodejs\
+$nim\
+$rust\
+[](fg:#86BBD8 bg:#06969A)\
+$docker_context\
+[](fg:#06969A bg:#2a3e63)\
+[\uE0C0 ](fg:#2a3e63)\
+$character\
+"""
+#$time\
+#$username\
+#[\uE0BA](fg:#6f282e bg:#3a454e)\
+#$git_status\
 
-# Second param
-[hostname]
-disabled = false
-format = "[$hostname]($style) in "
-ssh_only = false
-style = "bold dimmed red"
-trim_at = "-"
+add_newline = true
+right_format = "$cmd_duration"
 
-# Third param
-[directory]
-style = "purple"
-truncate_to_repo = true
-truncation_length = 0
-truncation_symbol = "repo: "
-
-# Fourth param
-[sudo]
-disabled = false
-
-# Before all the version info (python, nodejs, php, etc.)
-[git_status]
-ahead = "⇡${count}"
-behind = "⇣${count}"
-deleted = "x"
-diverged = "⇕⇡${ahead_count}⇣${behind_count}"
-style = "white"
-
-# Last param in the first line/row
-[cmd_duration]
-disabled = false
-format = "took [$duration]($style)"
-min_time = 1
-
-## SECOND LINE/ROW: Prompt
-# Somethere at the beginning
-[battery]
-charging_symbol = ""
-disabled = true
-discharging_symbol = ""
-full_symbol = ""
-
-[[battery.display]] # "bold red" style when capacity is between 0% and 15%
-disabled = false
-style = "bold red"
-threshold = 15
-
-[[battery.display]] # "bold yellow" style when capacity is between 15% and 50%
-disabled = true
-style = "bold yellow"
-threshold = 50
-
-[[battery.display]] # "bold green" style when capacity is between 50% and 80%
-disabled = true
-style = "bold green"
-threshold = 80
-
-# Prompt: optional param 1
-[time]
-disabled = true
-format = " 🕙 $time($style)\n"
-style = "bright-white"
-time_format = "%T"
-
-# Prompt: param 2
 [character]
-error_symbol = " [×](bold red)"
-success_symbol = " [╰─λ](bold red)"
+success_symbol = "[](#395385)"
+error_symbol = " [](#df5b61)"
+vicmd_symbol = "[  ](#78b892)"
 
-# SYMBOLS
-[status]
+[cmd_duration]
+min_time = 1
+format = """
+[](fg:#818181 bg:none)
+[$duration]($style)
+[](fg:#818181 bg:#818181)
+[](fg:#2a3e63 bg:#818181)
+[](fg:#000000 bg:#2a3e63)
+[](fg:#2a3e63 bg:none) """
 disabled = false
-format = '[\[$symbol$status_common_meaning$status_signal_name$status_maybe_int\]]($style)'
-map_symbol = true
-pipestatus = true
-symbol = "🔴"
+style = "fg:#000000 bg:#818181"
 
-[aws]
-symbol = " "
+[username]
+show_always = true
+style_user = "bg:#3a454e"
+style_root = "bg:#3a454e"
+format = '[ $user ]($style)'
 
-[conda]
-symbol = " "
+[directory]
+style = "bg:#6f282e"
+format = "[ $path ]($style)"
+truncation_length = 2
+truncation_symbol = "…/"
 
-[dart]
-symbol = " "
+[directory.substitutions]
+"Documents" = " "
+"Documentos" = " "
+"Downloads" = " "
+"Descargas" = " "
+"Music" = " "
+"Pictures" = " "
+"Imágenes" = " "
+
+[c]
+symbol = " "
+style = "bg:#86BBD8 fg:#000000"
+format = '[ $symbol ]($style)'
 
 [docker_context]
 symbol = " "
+style = "bg:#06969A fg:#000000"
+format = '[ $symbol $context ]($style) $path'
 
 [elixir]
 symbol = " "
+style = "bg:#86BBD8 fg:#000000"
+format = '[ $symbol ]($style)'
 
 [elm]
 symbol = " "
+style = "bg:#86BBD8 fg:#000000"
+format = '[ $symbol ]($style)'
 
 [git_branch]
-symbol = " "
+symbol = ""
+style = "bg:#3a454e fg:#000000"
+format = '[ $symbol $branch ]($style)'
+
+#[git_status]
+#style = "bg:#FCA17D fg:#000000"
+#format = '[$all_status$ahead_behind ]($style)'
 
 [golang]
 symbol = " "
+style = "bg:#86BBD8 fg:#000000"
+format = '[ $symbol ($version) ]($style)'
 
-[hg_branch]
-symbol = " "
+[haskell]
+symbol = " "
+style = "bg:#86BBD8 fg:#000000"
+format = '[ $symbol ($version) ]($style)'
 
 [java]
 symbol = " "
+style = "bg:#86BBD8 fg:#000000"
+format = '[ $symbol ]($style)'
 
 [julia]
 symbol = " "
+style = "bg:#86BBD8 fg:#000000"
+format = '[ $symbol ]($style)'
+
+[nodejs]
+symbol = ""
+style = "bg:#86BBD8 fg:#000000"
+format = '[ $symbol ]($style)'
 
 [nim]
 symbol = " "
-
-[nix_shell]
-symbol = " "
-
-[nodejs]
-symbol = " "
-
-[package]
-symbol = " "
-
-[perl]
-symbol = " "
-
-[php]
-symbol = " "
-
-[python]
-symbol = " "
-
-[ruby]
-symbol = " "
+style = "bg:#86BBD8 fg:#000000"
+format = '[ $symbol ($version) ]($style)'
 
 [rust]
-symbol = " "
+symbol = ""
+style = "bg:#86BBD8 fg:#000000"
+format = '[ $symbol ($version) ]($style)'
 
-[swift]
-symbol = "ﯣ "
+[time]
+disabled = false
+time_format = "%R" # Hour:Minute Format
+style = "bg:#2a3e63"
+format = '[ 羽HackNerdFont $time ]($style)'
