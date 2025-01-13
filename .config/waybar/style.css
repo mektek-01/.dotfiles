@@ -182,16 +182,8 @@ window#waybar {
    color:#d08770;
 }
 
-#tags button:hover {
-transition: none;
-box-shadow: inherit;
-text-shadow: inherit;
-color: #ffffff;
-border-color: #ffffff;
-color: #ffffff;
+tooltip {
+    color: white;
+    background-color: black;
+    text-shadow: none;
 }
-
-#tags button.focused:hover {
-color: #ffffff;
-}
-
