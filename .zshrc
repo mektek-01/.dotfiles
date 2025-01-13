@@ -258,3 +258,4 @@ eval "$(mcfly init zsh)"
 
 ## Run fastfetch
 fastfetch
+biblesay

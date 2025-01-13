@@ -158,3 +158,4 @@ function hg() {
 eval "$(starship init bash)"
 
 fastfetch
+biblesay
